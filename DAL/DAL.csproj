@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F6BEED5-77E5-47D8-8022-99641E03AF49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstarction\Repositories\ICallRepository.cs" />
+    <Compile Include="Abstarction\Repositories\ICarRepository.cs" />
+    <Compile Include="Abstarction\Repositories\IEmployeeRepository.cs" />
+    <Compile Include="Abstarction\Repositories\IUserRepository.cs" />
+    <Compile Include="Abstarction\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Concrete\BaseRepository\BaseRepository.cs" />
+    <Compile Include="Concrete\Repositories\CallRepository.cs" />
+    <Compile Include="Concrete\Repositories\CarRepository.cs" />
+    <Compile Include="Concrete\Repositories\EmployeeRepository.cs" />
+    <Compile Include="Concrete\Repositories\UserRepository.cs" />
+    <Compile Include="Concrete\SQL\SqlCommandWrapper.cs" />
+    <Compile Include="Concrete\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Names\ColumnNames.cs" />
+    <Compile Include="Names\ParameterNames.cs" />
+    <Compile Include="Names\StoredProcedureNames.cs" />
+    <Compile Include="Parsers\CallParser.cs" />
+    <Compile Include="Parsers\CarParser.cs" />
+    <Compile Include="Parsers\EmployeeParser.cs" />
+    <Compile Include="Parsers\UserParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{2ee67533-ffd8-4b57-a8e1-3c43e4f93eb6}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
