@@ -34,7 +34,6 @@ CREATE TABLE
 			Model VARCHAR(30) NOT NULL,
 			Mileage INT NOT NULL,
 			[State] VARCHAR(50) NULL,
-			[Enabled] BIT NOT NULL 
 		);
 
 ALTER TABLE Car
@@ -53,10 +52,6 @@ ALTER TABLE Car
 	ADD CONSTRAINT CHK_LicensePlate_Car
 		CHECK (LicensePlate LIKE('[A-C][A-Z] [0-9][0-9][0-9][0-9] [A-Z][A-Z]'));
 
-ALTER TABLE Car
-	ADD CONSTRAINT DFLT_Enabled_Call
-		DEFAULT(1)
-			FOR [Enabled];
 GO
 
 USE [TaxiManagementSystem]

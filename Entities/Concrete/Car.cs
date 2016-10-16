@@ -13,7 +13,5 @@ namespace Entities.Concrete
         public int Id { get; set; }
 
         public int Mileage { get; set; }
-
-        public bool Enabled { get; set; }
     }
 }
